@@ -1,4 +1,13 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>       
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	
+	<style>
 .headermain{	
     background-color: #181818;	
 }
@@ -51,8 +60,19 @@ a{
     border:1px solid #181818;
     box-shadow: 0 0 7px #FFD300;
 }
+.dropdown-menu{
+	background-color: #181818;
+}
+.dropdown-item{
+	color: #FFD300;
+}
 </style>
 
+
+	    
+</head>
+<body>
+<header>
 
 <div class="headermain">
 <div class="container">
@@ -79,8 +99,15 @@ a{
 	  <li class="nav-item"> 
 		  <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a> 
 	  </li> 
-	  <li class="nav-item"> 
-		  <a class="nav-link" href="#"><i class="fas fa-user"></i> Account</a> 
+	  <li class="nav-item dropdown"> 
+	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	  <i class="fas fa-user"></i> Account
+        </a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="login.php">Login</a>
+          <a class="dropdown-item" href="signup.php">Sign Up</a>
+         
+        </div>
 	  </li> 
   </ul> 
     
