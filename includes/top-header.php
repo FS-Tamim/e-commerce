@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,6 +74,7 @@ a{
 
 	    
 </head>
+
 <body>
 <header>
 
@@ -99,16 +103,34 @@ a{
 	  <li class="nav-item"> 
 		  <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a> 
 	  </li> 
+	  
+<?php if(strlen($_SESSION['login']))
+    {   ?>
 	  <li class="nav-item dropdown"> 
 	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	  <i class="fas fa-user"></i> Account
-        </a>
+	  <i class="fas fa-user"></i><?php echo htmlentities($_SESSION['username']); ?>
+		</a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a class="dropdown-item" href="logout.php">log out</a>
+         
+        </div>
+		<?php }else{ ?>
+		
+		<li class="nav-item dropdown"> 
+	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	  <i class="fas fa-user"></i> account
+		</a>
+		
 		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="signup.php">Sign Up</a>
+		  <a class="dropdown-item" href="signup.php">Sign Up</a>
+		  <?php }
+ ?>
+		  
          
         </div>
 	  </li> 
+
   </ul> 
     
   </div>
