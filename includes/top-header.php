@@ -7,7 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-commerce</title>       
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="assets/css/main.css"> -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+
+	
 	
 	
 	<style>
@@ -111,6 +115,7 @@ a{
 	  <i class="fas fa-user"></i><?php echo htmlentities($_SESSION['username']); ?>
 		</a>
 		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		  <a class="dropdown-item" href="my-account.php">My Account</a>
 		  <a class="dropdown-item" href="logout.php">log out</a>
          
         </div>

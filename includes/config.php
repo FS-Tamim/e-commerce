@@ -7,7 +7,5 @@
     //connection check
     if(!$con){
         die("Connection failed");
-    }else{
-        echo "Connection Successful";
     }
 ?>

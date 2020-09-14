@@ -66,6 +66,7 @@ else{
     background-color: #181818;
     width:50% !important;
     margin-top: 1%;
+    color: white;
     margin-bottom: 3%;
     padding:10px;
     border-radius: 5px;
