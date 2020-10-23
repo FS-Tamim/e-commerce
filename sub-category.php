@@ -2,7 +2,37 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-$cid=intval($_GET['cid']);
+$cid=intval($_GET['scid']);
+if(isset($_GET['action']) && $_GET['action']=="add"){
+	$id=intval($_GET['id']);
+	if(isset($_SESSION['cart'][$id])){
+		$_SESSION['cart'][$id]['quantity']++;
+	}else{
+		$sql_p="SELECT * FROM products WHERE id={$id}";
+		$query_p=mysqli_query($con,$sql_p);
+		if(mysqli_num_rows($query_p)!=0){
+			$row_p=mysqli_fetch_array($query_p);
+			$_SESSION['cart'][$row_p['id']]=array("quantity" => 1, "price" => $row_p['productPrice']);
+			header('location:my-cart.php');
+		}else{
+			$message="Product ID is invalid";
+		}
+	}
+}
+// COde for Wishlist
+if(isset($_GET['pid']) && $_GET['action']=="wishlist" ){
+	if(strlen($_SESSION['login'])==0)
+    {   
+header('location:login.php');
+}
+else
+{
+mysqli_query($con,"insert into wishlist(userId,productId) values('".$_SESSION['id']."','".$_GET['pid']."')");
+echo "<script>alert('Product aaded in wishlist');</script>";
+header('location:my-wishlist.php');
+
+}
+}
 ?>
 
 
@@ -107,7 +137,7 @@ while ($row=mysqli_fetch_array($ret))
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="200" height="300"></a>
+				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="200" height="300"></a>
 			</div><!-- /.image -->			                      		   
 		</div><!-- /.product-image -->
 			

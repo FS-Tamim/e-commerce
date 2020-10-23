@@ -1,6 +1,19 @@
-<?php
+<?php 
 
+ if(isset($_GET['action'])){
+		if(!empty($_SESSION['cart'])){
+		foreach($_POST['quantity'] as $key => $val){
+			if($val==0){
+				unset($_SESSION['cart'][$key]);
+			}else{
+				$_SESSION['cart'][$key]['quantity']=$val;
+			}
+		}
+		}
+	}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +23,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="assets/css/main.css"> -->
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+
 
 	
 	
@@ -97,7 +111,7 @@ a{
 		  </a> 
 	  </li>
 	  <li class="nav-item"> 
-		  <a class="nav-link" href="#"><i class="fas fa-truck"></i> Track Order 
+		  <a class="nav-link" href="track-orders.php"><i class="fas fa-truck"></i> Track Order 
 		  </a> 
 	  </li>  
 	  <li class="nav-item"> 
@@ -105,7 +119,7 @@ a{
 		  </a> 
 	  </li> 
 	  <li class="nav-item"> 
-		  <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a> 
+		  <a class="nav-link" href="my-wishlist.php"><i class="fas fa-heart"></i> Wishlist</a> 
 	  </li> 
 	  
 <?php if(strlen($_SESSION['login']))
@@ -148,10 +162,60 @@ a{
 	<div>
 		<img class="logo" src="https://1000logos.net/wp-content/uploads/2018/08/Alibaba-logo-768x432.png" alt="">
 	</div>
-	<form class="form-inline my-2 mr-auto my-lg-0">
-      <input class="form-control search-bar ml-4" type="search" placeholder="Search" aria-label="Search">
-	  <button class="btn btn-outline-warning my-2 my-sm-0 search-btn" type="submit"><i class="fas fa-search"></i></button>
-	  <i class="fas fa-cart-arrow-down ml-5"></i>
+	<form class="form-inline my-2 mr-auto my-lg-0" name="search" method="post" action="search-result.php">
+      <input class="form-control search-bar ml-4 search-field"  placeholder="Search here..." name="product" required="required">
+	  <button class="btn search-button btn-outline-warning my-2 my-sm-0 search-btn"  type="submit" name="search"><i class="fas fa-search"></i></button>
+	  <?php
+    if(!empty($_SESSION['cart'])){
+		$sql = "SELECT * FROM products WHERE id IN(";
+			foreach($_SESSION['cart'] as $id => $value){
+			$sql .=$id. ",";
+			}
+			$sql=substr($sql,0,-1) . ") ORDER BY id ASC";
+			$query = mysqli_query($con,$sql);
+			$totalprice=0;
+			$totalqunty=0;
+			if(!empty($query)){
+			while($row = mysqli_fetch_array($query)){
+				$quantity=$_SESSION['cart'][$row['id']]['quantity'];
+				$subtotal= $_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge'];
+				$totalprice += $subtotal;
+				$_SESSION['qnty']=$totalqunty+=$quantity;
+				$_SESSION['tp']=$totalprice;
+			}
+		}
+
+	?>
+	
+			<div class="items-cart-inner">
+				<div class="total-price-basket">
+					<span class="lbl">cart -</span>
+					<span class="total-price">
+						<span class="sign">Rs.</span>
+						<span class="value"><?php echo $_SESSION['tp']; ?></span>
+					</span>
+				</div>
+				<li class="nav-item">
+        <a class="nav-link" href="my-cart.php"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+				<div class="basket-item-count"><span class="count"><?php echo $_SESSION['qnty'];?></span></div>
+			
+			</div>
+		
+		
+    <?php }
+    else { ?>
+
+<i class="fas fa-cart-arrow-down ml-5"></i>
+<div><span class="count"> 0</span></div>
+         <?php }?>
+	  
 	</form>
 	</div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/6ad32c1b9a.js" crossorigin="anonymous"></script>
