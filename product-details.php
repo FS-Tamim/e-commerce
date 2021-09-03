@@ -64,20 +64,19 @@ if(isset($_POST['submit']))
         color: #181818;
         font-weight: bold !important;
       }
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    a {
-        outline: none !important;
-    }
-
-    a:hover,
-    a:active,
-    a:focus {
-        text-decoration: none;
-    }
+      .cart_btn{
+        margin-left: 15%;
+        margin-top: 5%;
+      }
+      .title{
+        font-weight: bold !important;
+        font-size: 25px;
+      }
+      .description{
+        margin-left: 25%;
+        margin-top: 7%;
+      }
+   
 
     .single-product .gallery-holder #owl-single-product .single-product-gallery-item img {
         width: 80%;
@@ -569,108 +568,15 @@ if(isset($_POST['submit']))
         margin-left: 5px;
     }
 
-    .product-tabs .tab-content .tab-pane .product-reviews .title {
-        color: #666666;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 20px;
-        margin: 0 0 10px;
-        text-transform: uppercase;
-        font-family: 'FjallaOneRegular';
-    }
 
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review {
-        margin-bottom: 20px;
-        font-family: 'Roboto', sans-serif;
-        text-transform: none;
-    }
 
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .review-title {
-        margin-bottom: 5px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .review-title .summary {
-        color: #666666;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 45px;
-        margin-right: 10px;
-        text-transform: uppercase;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .review-title .date {
-        font-size: 12px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .review-title .date span {
-        margin-left: 5px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .text {
-        line-height: 18px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-reviews .reviews .review .author span {
-        margin-left: 5px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .title {
-        color: #666666;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 20px;
-        margin: 0 0 20px;
-        text-transform: uppercase;
-        font-family: 'FjallaOneRegular';
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-table .table thead th {
-        font-weight: normal;
-        border-bottom-width: 1px;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-table .table tbody tr td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-table .table tbody tr td input {
-        float: none;
-        margin: auto;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-form label {
-        font-weight: normal;
-        font-size: 13px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-form label .astk {
-        color: #FF0000;
-        font-size: 12px;
-    }
-
-    .product-tabs .tab-content .tab-pane .product-add-review .review-form .txt {
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 0px;
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-
-    .lnk {
-        background-color: #db3d52 !important;
-        color: #FFFFFF !important;
-        font-size: 14px !important;
-        font-weight: bold !important;
-    }
-
-    
+  .product-tab{
+    margin-left: 10% !important;
+  }
     .name {
         font-weight: bold;
     }
+    
     </style>
 
 
@@ -835,15 +741,18 @@ if(isset($_POST['submit']))
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-8 cart_btn">
                                             <a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>"
-                                                class="btn "><i class="fa fa-shopping-cart"></i> ADD
+                                                class=" btn"><i class="fa fa-shopping-cart"></i> ADD
                                                 TO CART</a>
                                         </div>
-
-
+                                       
                                     </div><!-- /.row -->
                                 </div><!-- /.quantity-container -->
+
+
+                                
+                  
 
 
 
@@ -854,27 +763,25 @@ if(isset($_POST['submit']))
                     </div><!-- /.row -->
 
 
-                    <div class="product-tabs inner-bottom-xs  wow fadeInUp">
-                        <div class="row">
-                            <div class="col-sm-3" id="product-tabs" class="nav nav-tabs nav-tab-cell">
+                    <div class="description ">
+                        <div class="row"> 
+                            <div class=" title col-md-4 col-sm-3">
                                 DESCRIPTION
                             </div>
-                            <div class="col-sm-9">
+                            <div class="details col-sm-9 col-md-8">
 
-                                <div class="tab-content">
+                                
 
-                                    <div id="description" class="tab-pane in active">
-                                        <div class="product-tab">
+                                    
+                                        <div >
                                             <p class="text"><?php echo $row['productDescription'];?></p>
                                         </div>
-                                    </div><!-- /.tab-pane -->
+                                    
 
-                                </div><!-- /.tab-content -->
+
                             </div><!-- /.col -->
                         </div><!-- /.row -->
                     </div><!-- /.product-tabs -->
-
-
 
 
                 </div><!-- /.col -->

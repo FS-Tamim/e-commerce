@@ -130,7 +130,17 @@ a{
 	  </li> 
 	  
 <?php if(strlen($_SESSION['login']))
-    {   ?>
+    { $id_a=1;
+        $sql_a="SELECT email FROM admin WHERE id={$id_a}";
+        
+        $query_a = mysqli_query($con,$sql_a);
+        $row = mysqli_fetch_assoc($query_a);
+          $email = $row['email'];
+          if($_SESSION['login']==$email){
+          //  echo $_SESSION['login'];
+         //echo $email;
+          ?><li><a class="nav-link" href="admin/change_password.php">Admin Portal</a></li>
+                    <?php   }  ?>
 	  <li class="nav-item dropdown"> 
 	  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	  <i class="fas fa-user"></i><?php echo htmlentities($_SESSION['username']); ?>
