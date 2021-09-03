@@ -17,10 +17,10 @@
     .category_single-item:hover{
         text-decoration: none;
         color: #FDA50F;
-        transform: scale(1.2);
+        background-color: #181818 !important;
+        transform: scale(1.1);
     }
  
-    
 
 </style>
 

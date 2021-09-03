@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-echo "hi";
 if(isset($_POST['submit'])){
 
 if(!empty($_POST['email']) && !empty($_POST['password']))

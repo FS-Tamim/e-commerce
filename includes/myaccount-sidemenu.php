@@ -29,7 +29,7 @@
         height: 3px;
     }
 </style>
-<div class="col-md-4 mysaccountsidemenu">
+<div class="col-md-4 ml-2 mysaccountsidemenu">
 					<!-- checkout-progress-sidebar -->
 <div class="checkout-progress-sidebar ">
 	<div class="panel-group">

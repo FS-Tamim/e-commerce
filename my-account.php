@@ -207,6 +207,10 @@ $cpasswordError='<div class="alert alert-danger alert-dismissible fade show" rol
 <!-- Demo Purpose Only. Should be removed in production -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 <style>
+	.section_header{
+		margin-left: 5% !important;
+		margin-top: 2% !important;
+	}
 </style>
 
 
@@ -221,24 +225,16 @@ $cpasswordError='<div class="alert alert-danger alert-dismissible fade show" rol
 	<div class="container">
 		<div class=" inner-bottom-sm">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-7">
 					<div>
 						<!-- checkout-step-01  -->
 <div class="updatecontainer">
-	<!-- panel-heading -->
-		<div class="panel-heading">
-    	<h4 class="unicase-checkout-title">
-	   
-	          My Profile
-	        
-	     </h4>
-    </div>
-    <!-- panel-heading -->
+	
 	<div>
 		<!-- panel-body  -->
 	    <div class="panel-body">
 			<div class="row">		
-<h4>Personal info</h4>
+<h4 class="section_header">Personal info</h4>
 				<div class="col-md-12 col-sm-12">
 
 <?php
@@ -277,10 +273,8 @@ if(isset($updateSuccessText)) echo $updateSuccessText;
 					    <!-- checkout-step-02  -->
 					  	<div class="panel  updatecontainer">
 						    <div >
-						      <h4 class="unicase-checkout-title">
-						       
-						          <span>2</span>Change Password
-						      
+						      <h4  class="mt-4">
+						          Change Password
 						      </h4>
 						    </div>
 						    <div>

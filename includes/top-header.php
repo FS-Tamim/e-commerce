@@ -37,6 +37,7 @@ nav {
 	position: relative;	 
 	margin: 0;
 	color: #FFD300;
+	font-size: 15px;
 }
 .nav-link:hover{
 	color: #F9A602 !important;
@@ -62,7 +63,9 @@ a{
     border-bottom-right-radius:0!important;
 }
 .logo{
-	width: 250px;
+	height: 55px;
+	margin-top: 12%;
+	margin-bottom: 10%;
 }
 .search-bar:focus {
     outline: #FFD300 !important;
@@ -87,8 +90,12 @@ a{
 .dropdown-item{
 	color: #FFD300;
 }
-</style>
+.dropdown-item:hover{
+	color: #FFD300;
+	background-color:#262626;
+}
 
+</style>
 
 	    
 </head>
@@ -160,7 +167,8 @@ a{
 <div class="container search">
 	<div class="row">
 	<div>
-		<img class="logo" src="https://1000logos.net/wp-content/uploads/2018/08/Alibaba-logo-768x432.png" alt="">
+		<a href="index.php"><img class="logo" src="logo.PNG" alt=""></a>
+		
 	</div>
 	<form class="form-inline my-2 mr-auto my-lg-0" name="search" method="post" action="search-result.php">
       <input class="form-control search-bar ml-4 search-field"  placeholder="Search here..." name="product" required="required">

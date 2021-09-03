@@ -351,9 +351,9 @@ echo "Your shopping Cart is empty";
     <script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 
-	<!-- For demo purposes – can be removed on production -->
+	<!-- For demo purposes – can be removed on production
 	
-	<script src="switchstylesheet/switchstylesheet.js"></script>
+	<script src="switchstylesheet/switchstylesheet.js"></script> -->
 	
 	<script>
 		$(document).ready(function(){ 
