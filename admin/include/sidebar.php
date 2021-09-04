@@ -73,7 +73,7 @@
             
 
             <li>
-                <a class="title" class="title"href="logout.php">
+                <a class="title" href="../logout.php" class="title"href="logout.php">
                     <i class="menu-icon icon-signout"></i>
                     Logout
                 </a>
