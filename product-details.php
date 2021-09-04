@@ -60,8 +60,7 @@ if(isset($_POST['submit']))
     <!-- Customizable CSS -->
     <style>
       .btn{
-        background-color:#FFD300 !important ;
-        color: #181818;
+         
         font-weight: bold !important;
       }
       .cart_btn{
@@ -657,7 +656,7 @@ if(isset($_POST['submit']))
                                         <div class="col-sm-5">
                                             <div class="stock-box">
                                                 <span
-                                                    class="value"><?php echo htmlentities($row['productAvailability']);?></span>
+                                                    class="available" id="availability"><?php echo htmlentities($row['productAvailability']);?></span>
                                             </div>
                                         </div>
                                     </div><!-- /.row -->
@@ -743,7 +742,7 @@ if(isset($_POST['submit']))
 
                                         <div class="col-sm-8 cart_btn">
                                             <a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>"
-                                                class=" btn"><i class="fa fa-shopping-cart"></i> ADD
+                                                class=" btn" id="addtocart"><i class="fa fa-shopping-cart"></i> ADD
                                                 TO CART</a>
                                         </div>
                                        
@@ -791,6 +790,23 @@ if(isset($_POST['submit']))
         </div>
     </div>
     <script src="assets/js/scripts.js"></script>
+    <script>
+    var element = document.getElementsByClassName('available');
+    console.log(element[0].innerHTML);
+    if (element[0].innerHTML == "Out of Stock") {
+
+        
+        document.getElementById("addtocart").removeAttribute('href');
+        document.getElementById("addtocart").style.backgroundColor = "#B2BEB5";
+        document.getElementById("addtocart").style.color = "#ffffff";
+        document.getElementById("availability").style.color = "#cc0000";
+
+    } else {
+        document.getElementById("addtocart").style.backgroundColor = "#FFD300";
+        document.getElementById("addtocart").style.color = "#181818";
+        document.getElementById("availability").style.color = "#18A558";
+    }
+    </script>
 </body>
 <footer>
     <?php include('includes/footer.php');?>

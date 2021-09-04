@@ -74,8 +74,8 @@ a{
 	margin-top: -2%;
 }
 .search-btn{
-	background-color: #FFD300;
-	color: #181818;
+	background-color: #FFD300 !important;
+	color: #181818 !important;
 	border-top-left-radius:0!important;
     border-bottom-left-radius:0!important;
 }
@@ -93,6 +93,23 @@ a{
 .dropdown-item:hover{
 	color: #FFD300;
 	background-color:#262626;
+}
+.cart_icon{
+	font-size: 20px;
+	margin-bottom: 10%;
+}
+.items-cart-inner li{
+	list-style-type: none;
+}
+.basket-item-count{
+	margin-top: 10%;
+	color: #181818;
+	background-color: #FFD300;
+	border-radius: 50%;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	font-weight: bold;
 }
 
 </style>
@@ -122,7 +139,7 @@ a{
 		  </a> 
 	  </li>  
 	  <li class="nav-item"> 
-		  <a class="nav-link" href="#"><i class="fas fa-cart-arrow-down"></i> My Cart 
+		  <a class="nav-link" href="my-cart.php"><i class="fas fa-cart-arrow-down"></i> My Cart 
 		  </a> 
 	  </li> 
 	  <li class="nav-item"> 
@@ -205,15 +222,9 @@ a{
 
 	?>
 	
-			<div class="items-cart-inner">
-				<div class="total-price-basket">
-					<span class="lbl">cart -</span>
-					<span class="total-price">
-						<span class="sign">Rs.</span>
-						<span class="value"><?php echo $_SESSION['tp']; ?></span>
-					</span>
-				</div>
-				<li class="nav-item">
+			<div class="items-cart-inner row">
+				
+				<li class="nav-item cart_icon ml-3">
         <a class="nav-link" href="my-cart.php"><i class="fas fa-shopping-cart"></i></a>
         </li>
 				<div class="basket-item-count"><span class="count"><?php echo $_SESSION['qnty'];?></span></div>
@@ -225,7 +236,7 @@ a{
     else { ?>
 
 <i class="fas fa-cart-arrow-down ml-5"></i>
-<div><span class="count"> 0</span></div>
+
          <?php }?>
 	  
 	</form>

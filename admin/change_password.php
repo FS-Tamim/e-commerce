@@ -24,6 +24,8 @@ $_SESSION['msg']="Old Password not match !!";
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin| Change Password</title>
+    <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -52,6 +54,63 @@ $_SESSION['msg']="Old Password not match !!";
         return true;
     }
     </script>
+    <style>
+         .module-head h3{
+            color: white !important;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .module-head{
+            background-color: #282828;
+        }
+            .module-body{
+                background-color: #282828 ;
+                color: orange;
+                font-weight: bold;
+            }
+            .module-body{
+                background-color: #282828 ;
+                
+            }
+            .control-group .controls input:focus {
+                outline: none !important;
+                border:1px solid #181818;
+                box-shadow: 0 0 2px #FFD300;
+            }
+            /* .span8:focus {
+                text-decoration: none !important;
+                outline: #FFD300 !important;
+            } */
+            label{
+                color: orange;
+                font-weight: bold !important;
+            }
+            input,option{
+                background-color: #404040 !important;
+                color: white !important;
+            }
+            select{
+            text-decoration: none !important;
+            background-color: #404040 !important;
+            color: white;
+        }
+        .control-group:focus {
+    outline: none !important;
+    border:1px solid #181818 !important;
+    box-shadow: 0 0 2px #FFD300;
+}   
+.btn{
+    background-color: #FFD300;
+    font-weight: bold !important;
+    color: #181818;
+}
+.btn:hover{
+    background-color: #ffdb4d;
+}
+.control-group{
+    margin-bottom: 1.5% !important;
+}
+    </style>
 </head>
 
 <body>
@@ -61,11 +120,11 @@ $_SESSION['msg']="Old Password not match !!";
     </header>
 
     <div class="wrapper">
-        <div class="container">
+        <div class="container ">
             <div class="row">
                 <?php include('include/sidebar.php');?>
-                <div class="span9">
-                    <div class="content">
+                <div class="span9 form-container">
+                    <div class="content ">
 
                         <div class="module">
                             <div class="module-head">

@@ -48,10 +48,7 @@ $_SESSION['msg']="Product Inserted Successfully !!";
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
-    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    bkLib.onDomLoaded(nicEditors.allTextAreas);
-    </script>
+    
 
     <script>
     function getSubcat(val) {
@@ -70,6 +67,62 @@ $_SESSION['msg']="Product Inserted Successfully !!";
         $("#suggesstion-box").hide();
     }
     </script>
+    <style>
+         .module-head h3{
+            color: white !important;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .module-head{
+            background-color: #282828;
+        }
+            .module-body{
+                background-color: #282828 ;
+                color: orange;
+                font-weight: bold;
+            }
+            .module-body{
+                background-color: #282828 ;
+                
+            }
+            label{
+                color: orange;
+                font-weight: bold !important;
+            }
+            input,option,textarea{
+                background-color: #404040 !important;
+                color: white !important;
+            }
+            select{
+            text-decoration: none !important;
+            background-color: #404040 !important;
+            color: white;
+        }
+        .control-group .controls input:focus {
+                outline: none !important;
+                border:1px solid #181818;
+                box-shadow: 0 0 2px #FFD300;
+            }
+            .control-group .controls  option:focus {
+                outline: none !important;
+                border:1px solid #181818;
+                box-shadow: 0 0 2px #FFD300;
+            }
+            .btn{
+            background-color: #FFD300;
+            font-weight: bold !important;
+             color: #181818;
+          }
+        .btn:hover{
+             background-color: #ffdb4d;
+           }
+           .control-group{
+             margin-bottom: 1.5% !important;
+            }
+
+    
+       
+    </style>
 
 
 </head>
@@ -240,19 +293,11 @@ while($row=mysqli_fetch_array($query))
     <!--/.wrapper-->
 
     <?php include('include/footer.php');?>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    <script src="scripts/datatables/jquery.dataTables.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.datatable-1').dataTable();
-        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-        $('.dataTables_paginate > a').wrapInner('<span />');
-        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-    });
-    </script>
+    
 </body>

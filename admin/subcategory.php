@@ -31,6 +31,73 @@ if(isset($_GET['del']))
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
+        <style>
+        .module-body{
+            background-color: #282828 ;
+            color: orange;
+            font-weight: bold;
+        }
+        .module-body{
+            background-color: #282828 ;
+            
+        }
+        label{
+            color: orange;
+            font-weight: bold !important;
+        }
+        input,textarea{
+            background-color: #404040 !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+         .table,.module-head,th,td{
+            background-color:#303030;
+            color: white;
+        }
+        select{
+            text-decoration: none !important;
+            background-color: #404040 !important;
+            color: white;
+        }
+        th:hover{
+            background-color: #383838;
+        }
+        .module-head h3{
+            color: white !important;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .icon-edit{
+            color: green;
+        }
+        .icon-remove-sign{
+            color: red;
+        }
+        .control-group .controls  input:focus {
+                outline: none !important;
+                border:1px solid #181818;
+                box-shadow: 0 0 2px #FFD300;
+            }
+        .control-group .controls .span8 .option{
+            text-decoration: none !important;
+            outline: none !important;
+                border:1px solid #181818;
+                box-shadow: 0 0 2px #FFD300;
+            
+        }
+        .btn{
+           background-color: #FFD300;
+           font-weight: bold !important;
+           color: #181818;
+        }
+       .btn:hover{
+            background-color: #ffdb4d;
+        }
+        .control-group{
+    margin-bottom: 1.5% !important;
+}
+
+    </style>
 </head>
 
 <body>
@@ -78,9 +145,11 @@ if(isset($_GET['del']))
                                         <div class="controls">
                                             <select name="category" class="span8 tip" required>
                                                 <option value="">Select Category</option>
-                                                <?php $query=mysqli_query($con,"select * from category");
+                                              <div class="option">
+                                              <?php $query=mysqli_query($con,"select * from category");
 while($row=mysqli_fetch_array($query))
 {?>
+                                              </div>
 
                                                 <option value="<?php echo $row['id'];?>">
                                                     <?php echo $row['categoryName'];?></option>
@@ -116,7 +185,7 @@ while($row=mysqli_fetch_array($query))
                             </div>
                             <div class="module-body table">
                                 <table cellpadding="0" cellspacing="0" border="0"
-                                    class="datatable-1 table table-bordered table-striped	 display" width="100%">
+                                    class="datatable-1 table table-bordered  display" width="100%">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -170,16 +239,7 @@ while($row=mysqli_fetch_array($query))
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    <script src="scripts/datatables/jquery.dataTables.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.datatable-1').dataTable();
-        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-        $('.dataTables_paginate > a').wrapInner('<span />');
-        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-    });
-    </script>
+    
 </body>
 <footer>
     <?php include('include/footer.php');?>

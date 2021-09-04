@@ -23,6 +23,32 @@ if(isset($_GET['del']))
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
+        <style>
+         .table,.module-head,th,td{
+            background-color:#303030;
+            color: white;
+        }
+        th:hover{
+            background-color: #383838;
+        }
+        /* .module-head{
+            width: 100% !important;
+        } */
+        .module-body{
+            width: 100% !important;
+        }
+        .module-head h3{
+            color: white !important;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .icon-edit{
+            color: green;
+        }
+        .icon-remove-sign{
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,7 +65,7 @@ if(isset($_GET['del']))
                             <div class="module-head">
                                 <h3>Manage Users</h3>
                             </div>
-                            <div class="module-body table">
+                            <div class="    table">
                                 <?php if(isset($_GET['del']))
 {?>
                                 <div class="alert alert-error">
@@ -53,7 +79,7 @@ if(isset($_GET['del']))
 
 
                                 <table cellpadding="0" cellspacing="0" border="0"
-                                    class="datatable-1 table table-bordered table-striped	 display" width="100%">
+                                    class="datatable-1 table table-bordered  display" width="100%">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -108,14 +134,5 @@ while($row=mysqli_fetch_array($query))
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    <script src="scripts/datatables/jquery.dataTables.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.datatable-1').dataTable();
-        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-        $('.dataTables_paginate > a').wrapInner('<span />');
-        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-    });
-    </script>
+    
 </body>

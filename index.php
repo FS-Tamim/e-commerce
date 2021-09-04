@@ -69,15 +69,16 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
         text-decoration: none;
     }
 
-    .lnk {
+    .btn {
         background-color: #181818 !important;
-        color: #FFFFFF !important;
-        font-size: 14px;
+        color: #FFD300 !important;
+		
+        
         font-weight: bold !important;
 
     }
 
-    /* .lnk:hover {
+    /* .btn:hover {
         color: #cc0000 !important;
     } */
 
@@ -207,7 +208,8 @@ while ($row=mysqli_fetch_array($ret))
 			</div><!-- /.product-price -->
 			
 		</div><!-- /.product-info -->
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn ">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn "><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 			</div><!-- /.product -->
       
 			</div><!-- /.products -->
@@ -261,7 +263,8 @@ while ($row=mysqli_fetch_array($ret))
 			</div><!-- /.product-price -->
 			
 		</div><!-- /.product-info -->
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn ">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn"><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 			</div><!-- /.product -->
       
 			</div><!-- /.products -->
@@ -315,7 +318,8 @@ while ($row=mysqli_fetch_array($ret))
 			</div>
 			
 		</div>
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn ">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn"><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 			</div>
       
 			</div>
@@ -371,7 +375,8 @@ while ($row=mysqli_fetch_array($ret))
 			</div>
 			
 		</div>
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn ">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn"><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 			</div>
 			</div>
 		</div>
@@ -417,7 +422,8 @@ while ($row=mysqli_fetch_array($ret))
 			</div>
 			
 		</div>
-					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn">Add to Cart</a></div>
+					<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn"><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 			</div>imary
 			</div>
 		</div>
@@ -464,7 +470,7 @@ while ($row=mysqli_fetch_array($ret))
 
 										</div><!-- /.product-image -->
 									</div><!-- /.col -->
-									<div class="col col-xs-6">
+									<div class="col col-xs-6">	
 										<div class="product-info">
 											<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['productName']);?></a></h3>
 											<div class="rating rateit-small"></div>
@@ -474,7 +480,8 @@ while ($row=mysqli_fetch_array($ret))
 												</span>
 
 											</div><!-- /.product-price -->
-											<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn ">Add To Cart</a></div>
+											<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn "><i
+                                                                            class="fa fa-shopping-cart inner-right-vs"></i> add to cart</a></div>
 										</div>
 									</div><!-- /.col -->
 								</div><!-- /.product-micro-row -->

@@ -141,10 +141,10 @@ About us</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima fuga sint, dolorem accusantium, debitis fugit doloribus corporis eaque consectetur magni sit natus blanditiis corrupti animi sapiente saepe iure fugiat tempore!
            .</p>
 <div class="social">
-              <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
               <a href="#"><span class="fab fa-twitter"></span></a>
-              <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
-              <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
             </div>
 </div>
 </div>
