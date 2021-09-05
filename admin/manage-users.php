@@ -3,13 +3,13 @@ session_start();
 include('../includes/config.php');
 
 
-if(isset($_GET['del']))
-		  {
-		          mysqli_query($con,"delete from products where id = '".$_GET['id']."'");
-                  $_SESSION['delmsg']="Product deleted !!";
-		  }
+// if(isset($_GET['del']))
+// 		  {
+// 		          mysqli_query($con,"delete from products where id = '".$_GET['id']."'");
+//                   $_SESSION['delmsg']="Product deleted !!";
+// 		  }
 
-?>
+// ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,8 +86,8 @@ if(isset($_GET['del']))
                                             <th> Name</th>
                                             <th>Email </th>
                                             <th>Contact no</th>
-                                            <th>Shippping Address/City/State/Pincode </th>
-                                            <th>Billing Address/City/State/Pincode </th>
+                                            <th>Shippping Address/Area/City/Postcode </th>
+                                            <th>Billing Address/Area/City/Postcode </th>
                                             <th>Reg. Date </th>
 
                                         </tr>
@@ -104,9 +104,9 @@ while($row=mysqli_fetch_array($query))
                                             <td><?php echo htmlentities($row['name']);?></td>
                                             <td><?php echo htmlentities($row['email']);?></td>
                                             <td> <?php echo htmlentities($row['contactno']);?></td>
-                                            <td><?php echo htmlentities($row['shippingAddress'].",".$row['shippingCity'].",".$row['shippingState']."-".$row['shippingPincode']);?>
+                                            <td><?php echo htmlentities($row['shippingAddress'].",".$row['shippingState'].",".$row['shippingCity']."-".$row['shippingPincode']);?>
                                             </td>
-                                            <td><?php echo htmlentities($row['billingAddress'].",".$row['billingCity'].",".$row['billingState']."-".$row['billingPincode']);?>
+                                            <td><?php echo htmlentities($row['billingAddress'].",".$row['billingState'].",".$row['billingCity']."-".$row['billingPincode']);?>
                                             </td>
                                             <td><?php echo htmlentities($row['regDate']);?></td>
 
@@ -126,7 +126,7 @@ while($row=mysqli_fetch_array($query))
         </div>
         <!--/.container-->
     </div>
-    <!--/.wrapper-->
+  
 
     <?php include('include/footer.php');?>
 

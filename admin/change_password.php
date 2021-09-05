@@ -4,11 +4,13 @@ include('../includes/config.php');
 
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"SELECT password FROM  admin where password='".md5($_POST['password'])."' && username='".$_SESSION['alogin']."'");
+$sql=mysqli_query($con,"SELECT password FROM  admin where password='".md5($_POST['password'])."' && email='".$_SESSION['login']."'");
 $num=mysqli_fetch_array($sql);
+date_default_timezone_set('Asia/Dhaka');// change according timezone
+$currentTime = date( 'd-m-Y h:i:s A', time () );
 if($num>0)
 {
- $con=mysqli_query($con,"update admin set password='".md5($_POST['newpassword'])."', updationDate='$currentTime' where username='".$_SESSION['alogin']."'");
+ $con=mysqli_query($con,"update admin set password='".md5($_POST['newpassword'])."', updationDate='$currentTime' where email='".$_SESSION['login']."'");
 $_SESSION['msg']="Password Changed Successfully !!";
 }
 else
@@ -147,7 +149,7 @@ $_SESSION['msg']="Old Password not match !!";
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Current Password</label>
                                         <div class="controls">
-                                            <input type="password" placeholder="Enter your current Password"
+                                                <input type="password" placeholder="Enter your current Password"
                                                 name="password" class="span8 tip" required>
                                         </div>
                                     </div>
@@ -156,24 +158,18 @@ $_SESSION['msg']="Old Password not match !!";
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">New Password</label>
                                         <div class="controls">
-                                            <input type="password" placeholder="Enter your new current Password"
+                                            <input type="password" placeholder="Enter your new Password"
                                                 name="newpassword" class="span8 tip" required>
                                         </div>
                                     </div>
 
                                     <div class="control-group">
-                                        <label class="control-label" for="basicinput">Current Password</label>
+                                        <label class="control-label" for="basicinput">Retype New Password</label>
                                         <div class="controls">
                                             <input type="password" placeholder="Enter your new Password again"
                                                 name="confirmpassword" class="span8 tip" required>
                                         </div>
                                     </div>
-
-
-
-
-
-
                                     <div class="control-group">
                                         <div class="controls">
                                             <button type="submit" name="submit" class="btn">Submit</button>
@@ -182,18 +178,12 @@ $_SESSION['msg']="Old Password not match !!";
                                 </form>
                             </div>
                         </div>
-
-
-
                     </div>
-                    <!--/.content-->
                 </div>
-                <!--/.span9-->
             </div>
         </div>
-        <!--/.container-->
-    </div>
-    <!--/.wrapper-->
+ </div>
+
 
 
 

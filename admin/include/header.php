@@ -1,34 +1,22 @@
+<style>
+    .navbar {
+	position: static!important;
+	margin: 0!important
+}
+.navbar .navbar-inner {
+	background: #fff;
+	border-bottom: 1px solid #bbb;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15)
+}
+</style>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                <i class="icon-reorder shaded"></i>
-            </a> -->
-
-            <a class="brand" href="../index.php">
+            <a class="brand">
                 <img href="../index.php" class="logo" style="height:60px" src=" logo.PNG" />
             </a>
-
-            <!-- <div class="nav-collapse collapse navbar-inverse-collapse">
-                <ul class="nav pull-right">
-
-                    <li class="nav-user dropdown">
-                        <a href="#" style="margin-top:30px!important;font-size:15px" class=" dropdown-toggle"
-                            data-toggle="dropdown">
-                           
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  </button>
-                            <li><a href="change-password.php">Change Password</a></li>
-                            <li class="divider"></li>
-                            <li><a href="../logout.php">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> -->
-            <!-- nav-collapse -->
         </div>
-    </div><!-- /navbar-inner -->
-</div><!-- /navbar -->
+    </div>
+</div>
